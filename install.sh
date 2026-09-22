@@ -47,6 +47,18 @@ case "$TARGET" in
             echo " Appended Humanizer rules to .cursorrules"
         fi
         ;;
+    --help|-h|help)
+        echo "Usage: ./install.sh [target]"
+        echo "Available targets:"
+        echo "  ./install.sh antigravity-global  -> ~/.gemini/antigravity/skills/humanizer"
+        echo "  ./install.sh antigravity-local   -> ./.agents/skills/humanizer"
+        echo "  ./install.sh claude-global       -> ~/.claude/skills/humanizer"
+        echo "  ./install.sh claude-local        -> ./.claude/skills/humanizer"
+        echo "  ./install.sh cursor              -> appends rules to .cursorrules"
+        echo "  ./install.sh local               -> ./.agents/skills/humanizer"
+        echo "  ./install.sh auto                -> automatically detects agent environment"
+        exit 0
+        ;;
     auto|"")
         echo "Auto-detecting agent configuration..."
         INSTALLED=0
