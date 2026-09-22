@@ -29,7 +29,7 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/your-username/humanizer-skill"
+"Homepage" = "https://github.com/Norbert-Brett/humanizer-skill"
 "Paper" = "https://arxiv.org"
 
 [project.scripts]

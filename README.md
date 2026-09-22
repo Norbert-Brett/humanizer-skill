@@ -113,7 +113,7 @@ This repository adheres to the **Universal Agent Skills Standard** (`SKILL.md`),
 ### Automated Installation (One Command)
 Clone the repository and run the installer:
 ```bash
-git clone https://github.com/your-username/humanizer-skill.git
+git clone https://github.com/Norbert-Brett/humanizer-skill.git
 cd humanizer-skill
 ./install.sh auto
 ```
