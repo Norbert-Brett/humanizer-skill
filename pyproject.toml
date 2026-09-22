@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "humanizer-storyscope"
+version = "2.0.0"
+authors = [
+  { name = "Humanizer Contributors" }
+]
+description = "Universal agent skill and CLI tool to eliminate structural AI writing slop based on StoryScope (COLM 2026)."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+keywords = ["ai", "agents", "storyscope", "anti-slop", "humanizer", "creative-writing", "llm"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Text Processing :: Linguistic",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/your-username/humanizer-skill"
+"Paper" = "https://arxiv.org"
+
+[project.scripts]
+humanizer-audit = "audit_narrative:main"
+
+[tool.setuptools.package-dir]
+"" = "scripts"
+
+[tool.setuptools]
+py-modules = ["audit_narrative"]

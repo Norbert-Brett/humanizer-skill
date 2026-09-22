@@ -1,0 +1,6 @@
+# Humanizer 2.0 CLI relies exclusively on Python standard library (re, sys, argparse).
+# No external dependencies required for core execution.
+#
+# Optional development dependencies:
+# pytest>=7.0.0
+# flake8>=6.0.0
