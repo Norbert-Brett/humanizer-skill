@@ -110,45 +110,78 @@ flowchart LR
 
 This repository adheres to the **Universal Agent Skills Standard** (`SKILL.md`), making it instantly discoverable by modern agent platforms.
 
-### Automated Installation (One Command)
+### Automated Universal Installation (One Command)
 Clone the repository and run the installer:
 ```bash
 git clone https://github.com/Norbert-Brett/humanizer-skill.git
 cd humanizer-skill
 ./install.sh auto
 ```
-
-Or install for your specific environment:
-
-### 1. Google Antigravity & Agent Skills
-* **Global installation**:
-  ```bash
-  ./install.sh antigravity-global
-  # Installed into ~/.gemini/antigravity/skills/humanizer
-  ```
-* **Project-local**:
-  ```bash
-  ./install.sh antigravity-local
-  # Installed into ./.agents/skills/humanizer
-  ```
-
-### 2. Claude Code & Anthropic Workflows
-Copy the skill into Claude's skill discovery path or reference the configuration in `integrations/CLAUDE.md`:
+Or install via one-line curl:
 ```bash
-./install.sh claude-global
-# or
-./install.sh claude-local
+curl -sSL https://raw.githubusercontent.com/Norbert-Brett/humanizer-skill/main/install.sh | bash
 ```
 
-### 3. Cursor & Windsurf IDEs
-Append the anti-slop rules directly to your project's `.cursorrules`:
-```bash
-./install.sh cursor
-```
-Alternatively, copy [integrations/.cursorrules](./integrations/.cursorrules) to your project root.
+The installer deploys to the **Universal Agent Skills Standard** (`~/.agents/skills/humanizer` and `./.agents/skills/humanizer`) and automatically links the skill to every active agent found on your system.
 
-### 4. ChatGPT / Custom GPTs / Claude Web
-Copy the ready-to-use prompt from [integrations/system_prompt.md](./integrations/system_prompt.md) directly into your Custom GPT's **Instructions** or Claude Project **System Instructions**.
+### Environment-Specific Installations
+
+* **All Agents (Universal Global Deploy)**:
+  ```bash
+  ./install.sh all
+  # Installs to ~/.agents/skills/humanizer and links to Antigravity, Claude, Cursor, Windsurf, Codex, Cline, Copilot, Gemini, OpenHands
+  ```
+
+* **Project-Local (Active Workspace)**:
+  ```bash
+  ./install.sh --local
+  # Installs to ./.agents/skills/humanizer and creates project links & rule configs
+  ```
+
+* **Google Antigravity & Gemini CLI**:
+  ```bash
+  ./install.sh antigravity
+  # Global hub linked to ~/.gemini/antigravity/skills/humanizer and ~/.gemini/skills/humanizer
+  ```
+
+* **Claude Code & Anthropic Workflows**:
+  ```bash
+  ./install.sh claude
+  # Linked to ~/.claude/skills/humanizer and workspace ./.claude/skills/humanizer
+  ```
+
+* **Cursor IDE**:
+  ```bash
+  ./install.sh cursor
+  # Installs skill into ~/.cursor/skills/humanizer, .cursor/skills/humanizer, and configures .cursorrules & .cursor/rules/humanizer.mdc
+  ```
+
+* **Windsurf IDE**:
+  ```bash
+  ./install.sh windsurf
+  # Installs skill into ~/.windsurf/skills/humanizer and deploys .windsurfrules
+  ```
+
+* **OpenAI Codex**:
+  ```bash
+  ./install.sh codex
+  # Installs skill into ~/.codex/skills/humanizer
+  ```
+
+* **Cline & Roo Code**:
+  ```bash
+  ./install.sh cline
+  # Installs skill into ~/.cline/skills/humanizer and deploys .clinerules
+  ```
+
+* **GitHub Copilot**:
+  ```bash
+  ./install.sh copilot
+  # Installs skill into ~/.copilot/skills/humanizer and deploys .github/copilot-instructions.md
+  ```
+
+* **ChatGPT / Custom GPTs / Claude Web**:
+  Copy the ready-to-use prompt from [integrations/system_prompt.md](./integrations/system_prompt.md) directly into your Custom GPT's **Instructions** or Claude Project **System Instructions**.
 
 ---
 
@@ -237,14 +270,24 @@ humanizer-audit path/to/story.txt
 
 ```
 humanizer-skill/
-├── .agents/skills/humanizer/
-│   └── SKILL.md              # Nested Agent Skills standard entrypoint
-├── .github/workflows/
-│   └── audit.yml             # GitHub Actions CI workflow
+├── .agents/skills/humanizer/ # Universal Agent Skills discovery entrypoint
+│   ├── SKILL.md
+│   ├── references/
+│   ├── examples/
+│   └── scripts/
+├── .github/
+│   └── workflows/
+│       └── audit.yml         # GitHub Actions CI workflow
 ├── integrations/
-│   ├── CLAUDE.md             # Claude Code / Anthropic Projects setup
-│   ├── .cursorrules          # Cursor IDE rules file
-│   └── system_prompt.md      # Copy-paste system prompt for ChatGPT / Claude
+│   ├── AGENTS.md             # Universal agent operating rules
+│   ├── GEMINI.md             # Google Antigravity & Gemini CLI operating rules
+│   ├── CLAUDE.md             # Claude Code & Anthropic workflows
+│   ├── .cursorrules          # Legacy Cursor IDE rules file
+│   ├── cursor-rules.mdc      # Modern Cursor MDC rules file
+│   ├── .windsurfrules        # Windsurf Cascade IDE rules
+│   ├── .clinerules           # Cline & Roo Code rules
+│   ├── copilot-instructions.md # GitHub Copilot workspace instructions
+│   └── system_prompt.md      # Standalone system prompt for ChatGPT / Claude
 ├── references/
 │   ├── core_features_matrix.md
 │   ├── model_fingerprints.md
@@ -260,7 +303,7 @@ humanizer-skill/
 │   └── audit_narrative.py    # StoryScope CLI diagnostic tool
 ├── tests/
 │   └── test_audit.py         # Unit tests for audit engine
-├── install.sh                # Cross-agent shell installer
+├── install.sh                # Universal cross-agent installer
 ├── pyproject.toml            # Python packaging specification
 ├── requirements.txt          # Python requirements
 ├── LICENSE                   # MIT License

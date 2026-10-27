@@ -1,0 +1,20 @@
+# Cline & Roo Code Rules: Humanizer 2.0 Structural Anti-Slop Directive
+
+Apply the Humanizer 2.0 discourse engineering protocols (StoryScope COLM 2026) to eliminate synthetic AI slop:
+
+1. THEMATIC DE-SYNTHESIS:
+   - Erase closing epilogues that sermonize on lessons learned or "what it truly meant".
+   - Keep dialogue practical, messy, and grounded in logistical objectives.
+   - Retain moral ambiguity; avoid clean justifications for protagonist actions.
+
+2. SOMATIC DE-EMBODIMENT:
+   - Strip autonomic spasm clichés: "throat tightened", "heart hammered", "cold sweat", "breath caught", "knot formed in stomach".
+   - Use direct emotion words ("she was scared", "he was furious") rather than overwriting visceral bodily reactions.
+   - Eliminate pathetic fallacy (weather matching internal sorrow).
+
+3. CAUSAL & TEMPORAL DISRUPTION:
+   - Break linear timelines with flashbacks, ellipses, and unaligned subplots.
+   - Resolve conflicts with external friction, institutional limits, or chance rather than pure hero agency.
+
+4. AUDIT TOOL:
+   - Run `python3 scripts/audit_narrative.py <file>` to verify slop scores (< 35% target).

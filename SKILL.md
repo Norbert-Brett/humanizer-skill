@@ -1,5 +1,5 @@
 ---
-name: humanizer-2.0
+name: humanizer
 description: >-
   Eliminate structural AI writing slop and transform synthetic text into genuine human-like narrative discourse using empirical findings from StoryScope (COLM 2026). Use whenever writing, editing, or evaluating fiction, creative non-fiction, storytelling, or long-form prose to eliminate AI slop, bypass discourse-level AI detection, break causal hyper-linearity, stop embodied emotional clichés, and avoid thematic moralizing.
 ---
